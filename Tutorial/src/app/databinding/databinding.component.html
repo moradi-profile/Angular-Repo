@@ -1,0 +1,60 @@
+<!-------------------------------------------Databinding------------------------------------------>
+
+<!--Interpolation (mit dem '{{}}'' wird Der name mit sienem aktuelle wert angezeigt)-->
+<h1>Hallo {{ name }}</h1>
+<hr />
+
+<!--Property Binding (mit dem '[]'  verweisst man auf den src dass
+    Er die Variable aus dem typescript code nehmen muss)-->
+<img [src]="imgVariable" />
+<hr />
+
+<!--Event Binding (mit dem '()' verweisst man auf dem HTML tag dass er die reingeschriebene 
+    event/Funktion ausführen soll )-->
+<button (click)="funktion()">Click</button>
+<p>{{ text }}</p>
+<hr />
+
+<!--Two Way Binding (mit dem '[()]' wird die aktulle Input wert in imgLink gebunden und
+    Änderungen werden auch in Input zurückgebundet )-->
+<input style="width: 500px" type="text" [(ngModel)]="imgLink" />
+<img [src]="imgLink" />
+<hr />
+
+<!------------------------------------------Eigenschaftendekorator------------------------------------------>
+
+<!--Input Dekorator-->
+<h2>hier ist Kindekomponent und das ist die variable: {{ fangeVariable }}</h2>
+<hr />
+
+<!--Output Dekorator-->
+<button (click)="sendeVariableAusKindKomponent()">
+  In Eltern komponente senden
+</button>
+<hr />
+
+<!--ViewChild Dekorator-->
+<button #mybtn>Value mit viewChild bekommen</button>
+<ng-content></ng-content>
+
+<!--HostBinding Dekorator
+Der @HostBinding-Dekorator wird in Angular verwendet, 
+um eine Eigenschaft an das Host-Element einer Komponente zu binden. 
+Dadurch können Sie Eigenschaften der Komponente mit Eigenschaften 
+des Host-Elements synchronisieren.
+-->
+
+<!--HostListener Dekorator
+Der @HostListener-Dekorator wird in Angular verwendet,
+um auf ein Ereignis des Host-Elements einer Komponente zu reagieren.
+Dadurch können Sie eine Methode aufrufen, wenn das Ereignis auftritt.
+-->
+
+<!------------------------------------------Directive Deep Dive------------------------------------------>
+<div *ngIf="booleanWert">
+  Dieses Element wird angezeigt, wenn isDisplayed wahr ist.
+</div>
+
+<div [ngClass]="{ highlight: booleanWert }">
+  Dieses Element erhält die Klasse 'highlight', wenn isHighlighted wahr ist.
+</div>
