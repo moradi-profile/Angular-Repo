@@ -1,24 +1,24 @@
 # Angular-Repo
 Ich versuche hier, die Themen, die ich in Angular lerne, strukturiert mitzuteilen :)
 
-#Wichtige Terminal befehle
+# Wichtige Terminal befehle
 
-### Neue Projekt Erstellen:
+### 1. Neue Projekt Erstellen:
 ```
 ng new projektName
 ```
 
-### Neue Component Erstellen:
+### 2. Neue Component Erstellen:
 ```
 ng generate component componentName
 ```
 
-### Prjekt im localhost starten:
+### 3. Prjekt im localhost starten:
 ```
 ng serve
 ```
 
-### Befehle stoppen:
+### 4. Befehle stoppen:
 ```
 strg + c
 ```
@@ -76,17 +76,47 @@ Ein Template in Angular ist eine Art HTML-Datei, die die Struktur und das Ausseh
 ## Direktiven
 Direktiven sind Anweisungen im Template, die das Verhalten und Aussehen von HTML-Elementen beeinflussen. Angular bietet eingebaute Direktiven, die es dir ermöglichen, das Verhalten deiner Benutzeroberfläche zu steuern.
 
-###Struktur-Direktiven: 
+### 1.Struktur-Direktiven: 
 Diese Direktiven ändern die Struktur des DOMs wie *ngFor, *ngIf unsw ... mit *ngIf kannst du entscheiden , ob ein Element im DOM angezeigt wird oder nicht, abhängig von einer Bedingung.
 ```html
 <div *ngIf="showElement">text</div>
 ```
 
-###Attribut-Direktiven:
+### 2.Attribut-Direktiven:
 Diese Direktiven ändern das Aussehen oder Verhalten von HTML-Elementen wie ngStyle, ngClass, ngModel usw... mit dem du dynamisch Klassen zu einem Element hinzufügen oder entfernen kannst.
 ```html
 <div [ngClass]="{'highlight': isHighlighted, 'bold': isBold}"text</div>
 ```
+
+## [Databinding](https://github.com/moradi-profile/Angular-Repo/tree/main/Tutorial/src/app/databinding)
+
+### 1. Interpolation (Einweg-Datenbindung):
+Interpolation ermöglicht es, Werte aus der Komponente direkt in das Template einzufügen. Dabei wird die doppelte geschweifte Klammer {{ }} verwendet
+```html
+<p>Willkommen, {{ username }}</p>
+```
+
+### 2. Eigenschaftsbindung (Einweg-Datenbindung):
+Hierbei werden Eigenschaften von HTML-Elementen an Eigenschaften der Komponente gebunden. Dies ermöglicht das Aktualisieren von HTML-Elementen basierend auf den Daten der Komponente.
+```html
+<img [src]="imageUrl">
+```
+
+### 3. Ereignisbindung:
+Mit der Ereignisbindung kannst du auf Benutzerinteraktionen reagieren, indem du Methoden in der Komponente aufrufst. Dies wird mit Klammern () gemacht.
+```html
+<button (click)="onButtonClick()">Klick mich!</button>
+```
+
+### 4. Zwei-Wege-Datenbindung:
+Die Zwei-Wege-Datenbindung kombiniert Eigenschaftsbindung und Ereignisbindung, um sowohl Änderungen in der Komponente als auch im Template zu synchronisieren. Sie wird oft mit Formularelementen wie <input> verwendet.
+```html
+<input [(ngModel)]="username">
+```
+
+
+
+
 
 
 
