@@ -114,6 +114,27 @@ Die Zwei-Wege-Datenbindung kombiniert Eigenschaftsbindung und Ereignisbindung, u
 <input [(ngModel)]="username">
 ```
 
+## [Services(https://github.com/moradi-profile/Angular-Repo/tree/main/Tutorial/src/app/servicee)]:
+
+Services sind Klassen, die bestimmte Aufgaben und Funktionen in deiner Anwendung abwickeln. Sie sind dafür verantwortlich, Daten und Logik zu verwalten, die von verschiedenen Teilen der Anwendung benötigt werden. 
+Ein Service könnte beispielsweise Daten von einem Server abrufen, eine Benutzerauthentifizierung durchführen oder allgemeine Geschäftslogik bereitstellen.
+
+### Service erstellen:
+Um einen Service in Angular zu erstellen, erstellst du eine normale TypeScript-Klasse mit der name "serviceName.service.ts"
+
+```ts
+import { Injectable } from '@angular/core';
+
+export class DataService {
+  private data: string[] = ['Daten 1', 'Daten 2', 'Daten 3'];
+
+  getData(): string[] {
+    return this.data;
+  }
+}
+```
+
+### Service benutzten:
 
 
 
