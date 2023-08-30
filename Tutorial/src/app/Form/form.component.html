@@ -1,0 +1,83 @@
+<div class="container">
+        <div class="mb-3">
+            <h3>Template-driven Approach (Template-gesteuerter Ansatz)</h3>
+            <p>
+                Angular hat zwei ansätze um mit forms um zugehen eine davon ist der Template-gesteuerter Ansatz den schreibt man einfach
+                in der tamplate als html code und angular wird automatisch die formular struktur bilden somit merkt der welche eingaben 
+                wir haben.
+                So ist schneller und einfacher
+            </p>
+            <!--
+                (ngSubmit)          =>  um bei eine button die methode aus typescript file auszuführen
+                #formular="ngForm"  =>  Bennung der form um mit viewChild auf die element zugreifen und mit ="ngForm" wird in der element
+                                        zusätzliche form funktion aus der NgForm klasse hinzugefügt
+                ngModel             =>  Ist eine directive bei der input elemente damit die elemente zu dem ngForm hinzugefügt werden und als 
+                                        eine form benutzt wird, damit kann man auch durch databinding werte hinzufügen
+                [disabled]          =>  Deaktiviert den button mir der verlgeichsausdruck
+                formular.invalid    =>  Gibt den wert zurück ob die formular vollständig richtig ausgefüllt ist valid ist ja und invalid nein/false  
+                
+                *Wichtig import:    =>  import { FormsModule} from '@angular/forms'
+
+                required            =>  Ist ein HTML Tag die man zu HTML Input elemenete hinzufügen kann damit der input nicht leer gelassen werden kann
+                
+                ngModelGroup        =>  Es ist eine directive, die man bei eine div in dem mehrere input drine sind eingeben kann, damit 
+                                        der input elemente als ein js objekt gespeichert werden können
+
+                #daten="ngModelGroup" => somit haben wir eine elementrefrence definiert mit der daten name damit können wir auf die ngModulGroupe 
+                                         des element zugiefe haben
+
+                
+            -->
+            <form (ngSubmit)="senden()" #formular="ngForm">    
+                <div class="container" 
+                ngModelGroup="benutzerdaten"
+                #daten="ngModelGroup"
+                >
+                    <label class="form-label" for="name" >Name:</label>    
+                    <input class="form-control" type="text" ngModel name="name" id="name" required >
+                    <br>
+                    <label class="form-label" for="name">E-Mail:</label>    
+                    <input class="form-control" type="email" ngModel name="text" id="text" required email>
+
+                    <p *ngIf="daten.invalid && daten.touched" style="color: red;">Bitte name und email ausfüllen!!</p>
+                </div>
+                <br>
+                <div class="container" 
+                ngModelGroup="personInformaiton"
+                #info="ngModelGroup"
+                >
+                    <label class="form-label">Gender:</label>
+                    <select class="form-control" name="gender" ngModel="Male" >
+                        <option value="gender" *ngFor="let gender of genders">{{ gender }}</option>
+                    </select>
+                    <br>
+                    <label class="form-label">Text:</label>
+                    <textarea class="form-control" name="text" id="text" [(ngModel)] = "text" required></textarea>
+                    <p>Dein Text: {{ text }}</p>
+                    <p *ngIf="info.invalid && info.touched" style="color: red;">Bitte gender und text ausfüllen!!</p>
+
+                </div>
+                <div class="container">
+                    <div class="radio" *ngFor="let account of accounts" >
+                        <input type="radio" [value]="account">{{" " + account }}
+                    </div>
+
+                </div>
+                <button class="btn btn-success" [disabled]="formular.invalid">Senden</button>
+            </form>
+        </div>
+</div>
+<hr >
+<div class="container">
+    <div class="mb-3">
+        <h3>Reactive Approach (Reaktiver Ansatz)</h3>
+        <p>
+            Die zweite Formular ansatz ist die Reaktiver Ansatz, der ist komplexere als Template-gesteuerter Ansatz ist in dem wir in typescript
+            die struktur der formular festlegen müssen sowie die HTML code und müssen wir die manuell miteinander verbinden.
+            Es ist biscchen komplexer aber dafür hat man grössere kontrolle über das formular
+        </p>
+        <form>    
+
+        </form>
+    </div>
+</div>
