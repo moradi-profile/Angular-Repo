@@ -114,7 +114,7 @@ Die Zwei-Wege-Datenbindung kombiniert Eigenschaftsbindung und Ereignisbindung, u
 <input [(ngModel)]="username">
 ```
 
-## [Services](https://github.com/moradi-profile/Angular-Repo/tree/main/Tutorial/src/app/servicee):
+## [Services](https://github.com/moradi-profile/Angular-Repo/tree/main/Tutorial/src/app/servicee)
 
 Services sind Klassen, die bestimmte Aufgaben und Funktionen in deiner Anwendung abwickeln. Sie sind dafür verantwortlich, Daten und Logik zu verwalten, die von verschiedenen Teilen der Anwendung benötigt werden. 
 Ein Service könnte beispielsweise Daten von einem Server abrufen, eine Benutzerauthentifizierung durchführen oder allgemeine Geschäftslogik bereitstellen.
