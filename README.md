@@ -1,7 +1,7 @@
 # Angular-Repo
 Ich versuche hier, die Themen, die ich in Angular lerne, strukturiert mitzuteilen :)
 
-# Wichtige Terminal befehle
+## Wichtige Terminal befehle
 
 ### 1. Neue Projekt Erstellen:
 ```
