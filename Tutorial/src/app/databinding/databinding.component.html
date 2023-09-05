@@ -68,21 +68,28 @@
   <!--Input Dekorator-->
   <h2>Input Dekorator</h2>
 
-  <p>hier ist Kindekomponent und das ist die variable: {{ fangeVariable }}</p>
-  <br />
+  <p>Diese Variable wird in KindKomponent gesendet:</p>
 
+  <app-input-komponent
+    [variableAusElternKompoent]="variableFuerKindKomponent"
+  ></app-input-komponent>
+
+  <br />
   <!--Output Dekorator-->
   <h2>Output Dekorator</h2>
+  <app-output-komponent
+    (sendeVariable)="getKindVariable($event)"
+  ></app-output-komponent>
+  <p>Daten aus KindKomponent: {{ kindVariable }}</p>
 
-  <button (click)="sendeVariableAusKindKomponent()">
-    Drucke hier um die daten in der kindklasse zu senden
-  </button>
   <br />
 
   <!--ViewChild Dekorator-->
   <h2>ViewChild Dekorator</h2>
 
+  <input type="text" #viewChildInput />
   <button (click)="viewChildMethode()" #mybtn>
     Drucke hier um die Element in Console zu sehen
   </button>
+  <p>input Value: {{ inputValue }}</p>
 </div>

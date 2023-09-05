@@ -59,8 +59,7 @@ export class DatabindingComponent {
     
    */
 
-  @Input() fangeVariable;
-
+  variableFuerKindKomponent: string = 'Hallo Kind komponent';
   /*
                         ((Output Binding))
                         
@@ -77,7 +76,13 @@ export class DatabindingComponent {
 
     <button (click)="functionInChild()">
 
+    */
+  kindVariable: string;
+  getKindVariable(data) {
+    this.kindVariable = data;
+  }
 
+  /*
     -- PaerentComponent --
     <app-ChildComponent (childVariable)="funktionInParen($event)" ></app-ChildComponent>
     parentVariable: string;
@@ -91,13 +96,6 @@ export class DatabindingComponent {
 
    */
 
-  @Output() sendeVariable = new EventEmitter<string>();
-
-  sendeVariableAusKindKomponent() {
-    this.sendeVariable.emit('aus Kind komponent');
-  }
-
-  
   //----------------------------------------------------------------
 
   /**
@@ -114,16 +112,11 @@ export class DatabindingComponent {
 
     */
 
-  @ViewChild('mybtn') btn: ElementRef<HTMLElement>;
-  btnValue: string;
+  @ViewChild('viewChildInput') inputVar: ElementRef;
+  inputValue: string;
 
   viewChildMethode() {
-    console.log('-----------------------------');
-    console.log(
-      'Hier ist der element durch viewchild aus der Tamplate Html gefangen:'
-    );
-    console.log(this.btn.nativeElement);
-    console.log('-----------------------------');
+    this.inputValue = this.inputVar.nativeElement.value;
   }
   //----------------------------------------------------------------
 
@@ -142,9 +135,6 @@ export class DatabindingComponent {
    */
 
   //----------------------------------------------------------------
-
-
-
 
   booleanWert = false;
   myArray = ['a', 'b', 'c', 'd', 'e'];
