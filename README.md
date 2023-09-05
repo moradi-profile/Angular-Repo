@@ -115,6 +115,110 @@ Diese Direktiven ändern das Aussehen oder Verhalten von HTML-Elementen wie ngSt
 <div [ngClass]="{'highlight': isHighlighted, 'bold': isBold}"text</div>
 ```
 
+### 6.Dekorator
+
+#### - Input:
+Der @Input-Dekorator ermöglicht es einer Elternkomponente, Daten an eine Kindkomponente weiterzugeben. Dieser Mechanismus dient dazu, Daten von der übergeordneten Ebene an die untergeordnete Ebene zu übertragen.
+```ts
+// nachricht-komponente.component.ts
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-nachricht',
+  template: `
+    <p>{{ empfangeneNachricht }}</p>
+  `
+})
+export class NachrichtKomponente {
+  @Input() empfangeneNachricht: string = '';
+}
+```
+
+```ts
+// eltern-komponente.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-eltern',
+  template: `
+    <app-nachricht [empfangeneNachricht]="nachrichtAusEltern"></app-nachricht>
+  `
+})
+export class ElternKomponente {
+  nachrichtAusEltern: string = 'Hallo von der Elternkomponente!';
+}
+```
+
+#### - Output:
+Der @Output-Dekorator ermöglicht es einer Kindkomponente, Ereignisse oder Daten an eine Elternkomponente zu senden. Dieser Mechanismus dient dazu, von der untergeordneten Ebene auf die übergeordnete Ebene zurückzumelden.
+
+```ts
+// counter-komponente.component.ts
+import { Component, EventEmitter, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-counter',
+  template: `
+    <button (click)="erhoeheZaehler()">Erhöhen</button>
+  `
+})
+export class CounterKomponente {
+  zaehler: number = 0;
+
+  @Output() zaehlerGeaendert = new EventEmitter<number>();
+
+  erhoeheZaehler() {
+    this.zaehler++;
+    this.zaehlerGeaendert.emit(this.zaehler);
+  }
+}
+```
+
+```ts
+// eltern-komponente.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-eltern',
+  template: `
+    <app-counter (zaehlerGeaendert)="zeigeZaehler($event)"></app-counter>
+    <p>Aktueller Zählerwert: {{ aktuellerZaehler }}</p>
+  `
+})
+export class ElternKomponente {
+  aktuellerZaehler: number = 0;
+
+  zeigeZaehler(zaehlerWert: number) {
+    this.aktuellerZaehler = zaehlerWert;
+  }
+}
+```
+
+
+#### - viewChild:
+ ist ein Mechanismus, um auf ein bestimmtes Element oder eine Direktive in einer Angular-Komponente zuzugreifen. Es ermöglicht Ihnen, auf das DOM-Element oder die Direktive in Ihrer Komponente zuzugreifen.
+ ```ts
+// eingabe-komponente.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-eingabe',
+  template: `
+    <input #eingabefeld type="text" />
+    <button (click)="inputInConsole()"></button>
+
+  `
+})
+export class EingabeKomponente {
+  @ViewChild('eingabefeld') eingabefeld: ElementRef | undefined;
+
+  inputInConsole(){
+    console.log(eingabefeld.nativeElement.value)
+  }
+}
+```
+
+
 
 ## [Services](https://github.com/moradi-profile/Angular-Repo/tree/main/Tutorial/src/app/servicee)
 
