@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ServiceComponent } from './servicee/service.component';
+import { FormComponent } from './Form/form.component';
+import { InputKomponentComponent } from './databinding/input-komponent/input-komponent.component';
+import { OutputKomponentComponent } from './databinding/output-komponent/output-komponent.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +16,10 @@ import { ServiceComponent } from './servicee/service.component';
     DatabindingComponent,
     ObservableComponent,
     ServiceComponent,
+    FormComponent,
+    InputKomponentComponent,
+    OutputKomponentComponent,
+    LifecycleComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

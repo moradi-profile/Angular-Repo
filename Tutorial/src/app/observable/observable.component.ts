@@ -6,7 +6,7 @@ import { Observable, Subscription, interval, map } from 'rxjs';
   templateUrl: './observable.component.html',
   styleUrls: ['./observable.component.css'],
 })
-export class ObservableComponent implements OnInit, OnDestroy {
+export class ObservableComponent implements /*OnInit , */ OnDestroy {
   private testobservable: Subscription = new Subscription();
 
   private eigeneObservable: Observable<any> = new Observable((observer) => {
@@ -24,7 +24,7 @@ export class ObservableComponent implements OnInit, OnDestroy {
   });
 
   private intervallObservable: Subscription = new Subscription();
-
+  /*
   ngOnInit() {
     this.intervallObservable = interval(1000).subscribe((data) => {
       console.log(data);
@@ -48,7 +48,7 @@ export class ObservableComponent implements OnInit, OnDestroy {
       })
     );
   }
-
+*/
   ngOnDestroy(): void {
     this.intervallObservable.unsubscribe();
   }

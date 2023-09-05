@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   ElementRef,
   EventEmitter,
@@ -58,6 +58,7 @@ export class DatabindingComponent {
    
     
    */
+
   @Input() fangeVariable;
 
   /*
@@ -96,12 +97,7 @@ export class DatabindingComponent {
     this.sendeVariable.emit('aus Kind komponent');
   }
 
-  /*
-                        ((Service))
-    Es kommt später erst
-
-  */
-
+  
   //----------------------------------------------------------------
 
   /**
@@ -118,12 +114,17 @@ export class DatabindingComponent {
 
     */
 
-  @ViewChild('mybtn') btn: ElementRef;
+  @ViewChild('mybtn') btn: ElementRef<HTMLElement>;
+  btnValue: string;
 
-  ngAfterViewInit() {
-    console.log(this.btn.nativeElement.innerText);
+  viewChildMethode() {
+    console.log('-----------------------------');
+    console.log(
+      'Hier ist der element durch viewchild aus der Tamplate Html gefangen:'
+    );
+    console.log(this.btn.nativeElement);
+    console.log('-----------------------------');
   }
-
   //----------------------------------------------------------------
 
   /**
@@ -142,27 +143,9 @@ export class DatabindingComponent {
 
   //----------------------------------------------------------------
 
-  /**
-                        ((Lifecycle))
-  ngOnChanges: Wird aufgerufen, wenn eine Eingabe-Eigenschaft (Input) 
-  gebunden wird oder sich deren Wert ändert.
 
-  ngOnInit: Wird aufgerufen, nachdem Angular die erste Change
-  Detection durchgeführt hat und die Komponente initialisiert wurde.
 
-  ngDoCheck: Wird aufgerufen, wenn Angular die Change Detection 
-  durchführt und prüft, ob sich der Wert einer Eigenschaft geändert hat.
-
-  ngOnDestroy: Wird aufgerufen, bevor Angular die Komponente 
-  zerstört und das Speichermodell freigibt.
-
-   */
-
-  /**
-    (Themen die noch unwichtig sind)
-    - View Encapsulation
-    - ContentChild()
- */
 
   booleanWert = false;
+  myArray = ['a', 'b', 'c', 'd', 'e'];
 }

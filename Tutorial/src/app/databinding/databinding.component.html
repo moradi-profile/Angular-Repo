@@ -1,60 +1,88 @@
 <!-------------------------------------------Databinding------------------------------------------>
+<div class="container">
+  <h2>Databinding</h2>
+  <br />
+  <!--Interpolation (mit dem '{{}}'' wird Der name mit sienem aktuelle wert angezeigt)-->
+  <h4>Hallo {{ name }}</h4>
+  <br />
 
-<!--Interpolation (mit dem '{{}}'' wird Der name mit sienem aktuelle wert angezeigt)-->
-<h1>Hallo {{ name }}</h1>
-<hr />
-
-<!--Property Binding (mit dem '[]'  verweisst man auf den src dass
+  <!--Property Binding (mit dem '[]'  verweisst man auf den src dass
     Er die Variable aus dem typescript code nehmen muss)-->
-<img [src]="imgVariable" />
-<hr />
+  <img [src]="imgVariable" />
+  <br />
 
-<!--Event Binding (mit dem '()' verweisst man auf dem HTML tag dass er die reingeschriebene 
+  <!--Event Binding (mit dem '()' verweisst man auf dem HTML tag dass er die reingeschriebene 
     event/Funktion ausführen soll )-->
-<button (click)="funktion()">Click</button>
-<p>{{ text }}</p>
-<hr />
+  <button (click)="funktion()">Click</button>
+  <br />
 
-<!--Two Way Binding (mit dem '[()]' wird die aktulle Input wert in imgLink gebunden und
+  <p>{{ text }}</p>
+  <br />
+
+  <!--Two Way Binding (mit dem '[()]' wird die aktulle Input wert in imgLink gebunden und
     Änderungen werden auch in Input zurückgebundet )-->
-<input style="width: 500px" type="text" [(ngModel)]="imgLink" />
-<img [src]="imgLink" />
-<hr />
+  <input style="width: 500px" type="text" [(ngModel)]="imgLink" />
+  <br />
 
-<!------------------------------------------Eigenschaftendekorator------------------------------------------>
+  <img [src]="imgLink" />
+  <br />
 
-<!--Input Dekorator-->
-<h2>hier ist Kindekomponent und das ist die variable: {{ fangeVariable }}</h2>
-<hr />
+  <hr />
 
-<!--Output Dekorator-->
-<button (click)="sendeVariableAusKindKomponent()">
-  In Eltern komponente senden
-</button>
-<hr />
+  <!------------------------------------------Direktive------------------------------------------>
 
-<!--ViewChild Dekorator-->
-<button #mybtn>Value mit viewChild bekommen</button>
-<ng-content></ng-content>
+  <!--Struktur-Direktiven-->
+  <h2>Struktur-Direktiven</h2>
 
-<!--HostBinding Dekorator
-Der @HostBinding-Dekorator wird in Angular verwendet, 
-um eine Eigenschaft an das Host-Element einer Komponente zu binden. 
-Dadurch können Sie Eigenschaften der Komponente mit Eigenschaften 
-des Host-Elements synchronisieren.
--->
+  <div *ngIf="booleanWert">
+    ngIF Dieses Element wird angezeigt, wenn isDisplayed wahr ist.
+  </div>
+  <br />
 
-<!--HostListener Dekorator
-Der @HostListener-Dekorator wird in Angular verwendet,
-um auf ein Ereignis des Host-Elements einer Komponente zu reagieren.
-Dadurch können Sie eine Methode aufrufen, wenn das Ereignis auftritt.
--->
+  <div *ngFor="let i of [0, 1, 2, 3, 4, 5]">
+    Ein beispiel für ngFor in angular
+    {{ i }}
+  </div>
+  <br />
 
-<!------------------------------------------Directive Deep Dive------------------------------------------>
-<div *ngIf="booleanWert">
-  Dieses Element wird angezeigt, wenn isDisplayed wahr ist.
-</div>
+  <div *ngFor="let alphabet of myArray">
+    Ein weiter beispiel für ngFor in angular myArray ist in der Komponentklasse
+    als public variable gespeichert
+    {{ alphabet }}
+  </div>
+  <br />
 
-<div [ngClass]="{ highlight: booleanWert }">
-  Dieses Element erhält die Klasse 'highlight', wenn isHighlighted wahr ist.
+  <!--Attribut-Direktiven-->
+  <h2>Attribut-Direktiven</h2>
+
+  <div [ngClass]="{ highlight: booleanWert }">
+    ngClass Dieses Element erhält die Klasse 'highlight', wenn isHighlighted
+    wahr ist.
+  </div>
+  <br />
+
+  <hr />
+
+  <!------------------------------------------Dekorator------------------------------------------>
+
+  <!--Input Dekorator-->
+  <h2>Input Dekorator</h2>
+
+  <p>hier ist Kindekomponent und das ist die variable: {{ fangeVariable }}</p>
+  <br />
+
+  <!--Output Dekorator-->
+  <h2>Output Dekorator</h2>
+
+  <button (click)="sendeVariableAusKindKomponent()">
+    Drucke hier um die daten in der kindklasse zu senden
+  </button>
+  <br />
+
+  <!--ViewChild Dekorator-->
+  <h2>ViewChild Dekorator</h2>
+
+  <button (click)="viewChildMethode()" #mybtn>
+    Drucke hier um die Element in Console zu sehen
+  </button>
 </div>
