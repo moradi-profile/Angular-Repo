@@ -73,22 +73,8 @@ Ein Template in Angular ist eine Art HTML-Datei, die die Struktur und das Ausseh
 </div>
 ```
 
-## Direktiven
-Direktiven sind Anweisungen im Template, die das Verhalten und Aussehen von HTML-Elementen beeinflussen. Angular bietet eingebaute Direktiven, die es dir ermöglichen, das Verhalten deiner Benutzeroberfläche zu steuern.
 
-### 1.Struktur-Direktiven: 
-Diese Direktiven ändern die Struktur des DOMs wie *ngFor, *ngIf unsw ... mit *ngIf kannst du entscheiden , ob ein Element im DOM angezeigt wird oder nicht, abhängig von einer Bedingung.
-```html
-<div *ngIf="showElement">text</div>
-```
-
-### 2.Attribut-Direktiven:
-Diese Direktiven ändern das Aussehen oder Verhalten von HTML-Elementen wie ngStyle, ngClass, ngModel usw... mit dem du dynamisch Klassen zu einem Element hinzufügen oder entfernen kannst.
-```html
-<div [ngClass]="{'highlight': isHighlighted, 'bold': isBold}"text</div>
-```
-
-## [Databinding](https://github.com/moradi-profile/Angular-Repo/tree/main/Tutorial/src/app/databinding)
+# [Databinding](https://github.com/moradi-profile/Angular-Repo/tree/main/Tutorial/src/app/databinding)
 
 ### 1. Interpolation (Einweg-Datenbindung):
 Interpolation ermöglicht es, Werte aus der Komponente direkt in das Template einzufügen. Dabei wird die doppelte geschweifte Klammer {{ }} verwendet
@@ -113,6 +99,22 @@ Die Zwei-Wege-Datenbindung kombiniert Eigenschaftsbindung und Ereignisbindung, u
 ```html
 <input [(ngModel)]="username">
 ```
+
+### 5.Direktiven
+Direktiven sind Anweisungen im Template, die das Verhalten und Aussehen von HTML-Elementen beeinflussen. Angular bietet eingebaute Direktiven, die es dir ermöglichen, das Verhalten deiner Benutzeroberfläche zu steuern.
+
+#### - Struktur-Direktiven: 
+Diese Direktiven ändern die Struktur des DOMs wie *ngFor, *ngIf unsw ... mit *ngIf kannst du entscheiden , ob ein Element im DOM angezeigt wird oder nicht, abhängig von einer Bedingung.
+```html
+<div *ngIf="showElement">text</div>
+```
+
+#### - Attribut-Direktiven:
+Diese Direktiven ändern das Aussehen oder Verhalten von HTML-Elementen wie ngStyle, ngClass, ngModel usw... mit dem du dynamisch Klassen zu einem Element hinzufügen oder entfernen kannst.
+```html
+<div [ngClass]="{'highlight': isHighlighted, 'bold': isBold}"text</div>
+```
+
 
 ## [Services](https://github.com/moradi-profile/Angular-Repo/tree/main/Tutorial/src/app/servicee)
 
