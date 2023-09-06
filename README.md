@@ -153,6 +153,8 @@ import { Component, Input } from "@angular/core";
 @Component({
   selector: "app-nachricht",
   template: ` <p>{{ empfangeneNachricht }}</p> `,
+  standalone: true,
+  imports: [Input],
 })
 export class NachrichtKomponente {
   @Input() empfangeneNachricht: string = "";
@@ -168,6 +170,8 @@ import { Component } from "@angular/core";
   template: `
     <app-nachricht [empfangeneNachricht]="nachrichtAusEltern"></app-nachricht>
   `,
+  standalone: true,
+  imports: [],
 })
 export class ElternKomponente {
   nachrichtAusEltern: string = "Hallo von der Elternkomponente!";
@@ -211,7 +215,7 @@ import { Component } from "@angular/core";
     <p>Aktueller Zählerwert: {{ aktuellerZaehler }}</p>
   `,
   standalone: true,
-  imports: [EventEmitter, Output],
+  imports: [],
 })
 export class ElternKomponente {
   aktuellerZaehler: number = 0;
@@ -237,7 +241,7 @@ import { Component } from "@angular/core";
     <button (click)="inputInConsole()"></button>
   `,
   standalone: true,
-  imports: [EventEmitter, Output],
+  imports: [],
 })
 export class EingabeKomponente {
   @ViewChild("eingabefeld") eingabefeld: ElementRef | undefined;
