@@ -26,7 +26,6 @@ strg + c
 ## Component
 Komponenten sind die grundlegenden Bausteine für den Aufbau von Benutzeroberflächen. Stell dir Komponenten einfach wie Bausteine in einem LEGO-Set vor. Jede Komponente ist für ein bestimmtes Stück der Benutzeroberfläche verantwortlich und kann unabhängig von anderen Komponenten entwickelt, getestet und wiederverwendet werden.
 
-zb:
 
 ### AppComponent
 ```ts
