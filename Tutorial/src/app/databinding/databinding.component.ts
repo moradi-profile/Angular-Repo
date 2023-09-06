@@ -6,11 +6,24 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { OutputKomponentComponent } from './output-komponent/output-komponent.component';
+import { InputKomponentComponent } from './input-komponent/input-komponent.component';
+import { NgIf, NgFor, NgClass } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-databinding',
-  templateUrl: './databinding.component.html',
-  styleUrls: ['./databinding.component.css'],
+    selector: 'app-databinding',
+    templateUrl: './databinding.component.html',
+    styleUrls: ['./databinding.component.css'],
+    standalone: true,
+    imports: [
+        FormsModule,
+        NgIf,
+        NgFor,
+        NgClass,
+        InputKomponentComponent,
+        OutputKomponentComponent,
+    ],
 })
 export class DatabindingComponent {
   //DataBinding

@@ -2,9 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription, interval, map } from 'rxjs';
 
 @Component({
-  selector: 'app-observable',
-  templateUrl: './observable.component.html',
-  styleUrls: ['./observable.component.css'],
+    selector: 'app-observable',
+    templateUrl: './observable.component.html',
+    styleUrls: ['./observable.component.css'],
+    standalone: true,
 })
 export class ObservableComponent implements /*OnInit , */ OnDestroy {
   private testobservable: Subscription = new Subscription();

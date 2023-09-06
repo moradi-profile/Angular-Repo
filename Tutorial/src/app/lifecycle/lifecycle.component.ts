@@ -1,9 +1,10 @@
 import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-lifecycle',
-  templateUrl: './lifecycle.component.html',
-  styleUrls: ['./lifecycle.component.css'],
+    selector: 'app-lifecycle',
+    templateUrl: './lifecycle.component.html',
+    styleUrls: ['./lifecycle.component.css'],
+    standalone: true,
 })
 export class LifecycleComponent implements OnChanges, OnInit, OnDestroy {
   /**

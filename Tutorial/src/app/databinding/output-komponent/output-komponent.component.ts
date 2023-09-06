@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-output-komponent',
-  templateUrl: './output-komponent.component.html',
-  styleUrls: ['./output-komponent.component.css'],
+    selector: 'app-output-komponent',
+    templateUrl: './output-komponent.component.html',
+    styleUrls: ['./output-komponent.component.css'],
+    standalone: true,
 })
 export class OutputKomponentComponent {
   @Output() sendeVariable = new EventEmitter<string>();

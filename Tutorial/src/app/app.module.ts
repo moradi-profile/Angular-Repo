@@ -11,18 +11,15 @@ import { OutputKomponentComponent } from './databinding/output-komponent/output-
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DatabindingComponent,
-    ObservableComponent,
-    ServiceComponent,
-    FormComponent,
-    InputKomponentComponent,
-    OutputKomponentComponent,
-    LifecycleComponent,
-  ],
-  imports: [BrowserModule, FormsModule],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [BrowserModule, FormsModule, DatabindingComponent,
+        ObservableComponent,
+        ServiceComponent,
+        FormComponent,
+        InputKomponentComponent,
+        OutputKomponentComponent,
+        LifecycleComponent],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}
