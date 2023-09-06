@@ -22,6 +22,13 @@ ng serve
 ```
 strg + c
 ```
+###Wichtig: 
+####Ab Angular 16 gibt es die Möglichkeit, ein Standalone Projekt mit dem Befehl zu erstellen:
+"Standalone" ist eine Möglichkeit, Komponenten auf andere Weise zu importieren und sie zu nutzen. 
+Ohne "Standalone" wird die Struktur des Projekts in Module aufgeteilt, was zu einer unübersichtlichen struktur führen kann. Daher ist es ratsam, "Standalone" zu verwenden.
+```
+ng new projektName --standalone	
+```
 
 ## Component
 Komponenten sind die grundlegenden Bausteine für den Aufbau von Benutzeroberflächen. Stell dir Komponenten einfach wie Bausteine in einem LEGO-Set vor. Jede Komponente ist für ein bestimmtes Stück der Benutzeroberfläche verantwortlich und kann unabhängig von anderen Komponenten entwickelt, getestet und wiederverwendet werden.
