@@ -194,7 +194,7 @@ export class ElternKomponente {
 ```
 
 
-#### - viewChild:
+#### - ViewChild:
  ist ein Mechanismus, um auf ein bestimmtes Element oder eine Direktive in einer Angular-Komponente zuzugreifen. Es ermöglicht Ihnen, auf das DOM-Element oder die Direktive in Ihrer Komponente zuzugreifen.
  ```ts
 // eingabe-komponente.component.ts
