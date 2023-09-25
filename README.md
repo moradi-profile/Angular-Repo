@@ -289,7 +289,7 @@ export class myComponent {
   private data: string[] = [];
 
   constructor(private myService : serviceName){
-    this.data = myService.getData();    data = ["Daten 1", "Daten 2", "Daten 3"];
+    this.data = myService.getData();   //data = ["Daten 1", "Daten 2", "Daten 3"];
   }
 }
 ```
