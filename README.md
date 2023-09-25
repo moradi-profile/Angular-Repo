@@ -260,9 +260,18 @@ Ein Service könnte beispielsweise Daten von einem Server abrufen, eine Benutzer
 ### Service erstellen:
 
 Um einen Service in Angular zu erstellen, erstellst du eine normale TypeScript-Klasse mit der name "serviceName.service.ts"
+oder mit folgende CLI befehl:
 
+```
+ng generate service serviceName
+```
+
+Service:
 ```ts
-export class DataService {
+@Injectable({
+  providedIn:'root'
+})
+export class serviceName {
   private data: string[] = ["Daten 1", "Daten 2", "Daten 3"];
 
   getData(): string[] {
@@ -273,4 +282,14 @@ export class DataService {
 
 ### Service benutzten:
 
-... weiter schreiben
+Component
+```ts
+
+export class myComponent {
+  private data: string[] = [];
+
+  constructor(private myService : serviceName){
+    this.data = myService.getData();    data = ["Daten 1", "Daten 2", "Daten 3"];
+  }
+}
+```
